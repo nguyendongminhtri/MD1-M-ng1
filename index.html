@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    document.write('<h1>---------I --Mảng 1 Chiều -------------------</h1>')
+    document.write('<h1>---------1> Cú pháp khai báo mảng -------------------</h1>')
+    document.write('<h3>Có 2 cách khai báo mảng</h3>')
+    let arr = ['Long', 'minh','hiệp','Hưng', 'anh']
+    document.write(arr)
+    console.log('arr === ',arr)
+    console.log('length === ', arr.length)
+    let arrNumber = new Array(1,3,7,5,9)
+    console.log('arrNumber ===> ', arrNumber)
+    console.log('length number === ', arrNumber.length)
+    document.write('<h1>---------2> Cách Truy xuất -------------------</h1>')
+    document.write(arr[1])
+    document.write('<h1>---------3> Duyệt  mảng -------------------</h1>')
+    document.write('<h3>--- FOR -IN--------</h3>')
+    for (let index in arr){
+        // document.write('index ==== '+index+'<br>')
+        document.write(arr[index]+'-')
+    }
+    document.write('<h3>--- FOR -OFF--------</h3>')
+    for(let value of arr){
+        document.write('value == '+value+'<br>')
+    }
+    document.write('<h3>--- FOR ---------</h3>')
+    for (let i=0;i<arrNumber.length;i++){
+        document.write('value ===> '+arrNumber[i]+'<br>')
+    }
+    document.write('<h3>--- FOR EACH---------</h3>')
+    arr.forEach((value,index )=>{
+        document.write(index+'<br>')
+        document.write(value+'<br>')
+    })
+    document.write('<h1>---------4> Thao Tác với mảng-------------------</h1>')
+    document.write('<h3>--- push() thêm vào cuối mảng ---------</h3>')
+    arr.push('Hùng')
+    console.log('arr sau khi thêm == ', arr)
+    document.write('<h3>--- pop() xóa phần tử cuối trong mảng ---------</h3>')
+    arr.pop();
+    console.log('arr sau khi xóa == ', arr)
+    document.write('<h3>--- join() nối các phần tử của mảng thành chuỗi ---------</h3>')
+    console.log('dùng join() arrNumber ---> ',arrNumber.join())
+    document.write('<h3>---reverse() nối các phần tử của mảng thành chuỗi ---------</h3>')
+    // console.log('Mảng sau khi reverse()', arrNumber.reverse())
+    document.write('<h3>---sort() Sắp xếp các phần tử trong mảng ---------</h3>')
+    // console.log('Mảng sau khi sắp xếp: ',arrNumber.sort())
+    document.write('<h3>---sort() Sắp xếp giảm dần dùng function(a,b) ---------</h3>')
+    arrNumber.sort(function (a,b){
+        return b-a;
+    })
+    console.log('Mảng sau khi sắp xếp giảm dần', arrNumber)
+    let a = 'MINH';
+    console.log('a sau khi toLowerCase()', a.toLowerCase())
+    // console.log('sắp xếp mảng string dùng sort() thông thường', arr.sort())
+    arr.sort(function (s,t){
+        let arr1 = s.toLowerCase();
+        console.log('arr1 = ', arr1)
+        let arr2 = t.toLowerCase();
+        console.log('arr2 = ', arr2)
+        if(arr1<arr2){
+            return -1
+        } else {
+            return 1
+        }
+        // return 0;
+    })
+    console.log('arr sau khi sắp xếp với toLowerCase()', arr)
+    let chuoi1 = 'c';
+    let chuoi2 = 'ibn';
+    console.log('so sanh chuỗi thực hiện theo alpha (a-b) ---> ', chuoi1>chuoi2)
+    document.write('<h3>---concat() Nối các phần tử trong mảng ---------</h3>')
+    console.log('sau khi concat()',arrNumber.concat([77,99]))
+    let arrNumber2 = ['a','b','c','d','e','f']
+    // arrNumber2.slice(2)
+    document.write('<h3>---slice() Sao chép mảng mới trong khoảng start - end ---------</h3>')
+    console.log('mảng sau khi slice', arrNumber2.slice(4,5))
+    document.write('<h3>---shift() Xóa phần tử đầu mảng ---------</h3>')
+    arrNumber2.shift()
+    console.log('sau khi shift', arrNumber2)
+    arrNumber2.unshift('1')
+    document.write('<h3>---unshift() Thêm phần tử vào đầu mảng---------</h3>')
+    console.log('sau khi shift', arrNumber2)
+    console.log('toString()',arrNumber2.toString())
+</script>
+</body>
+</html>
